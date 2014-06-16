@@ -43,8 +43,14 @@ Check if you have any keys setup for agent forwarding:
 
     $ ssh-add -l
 
-Add your key if you don't have any listed:
+Add your key if the agent has no identities:
 
+    $ ssh-add
+
+If it says it couldn't open a connection to your authentication agent, start
+the ssh-agent and add your key:
+
+    $ eval $(ssh-agent)
     $ ssh-add
 
 You should now be ready to deploy!
